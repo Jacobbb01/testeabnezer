@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Integrativa | Psicanálise & Biomedicina</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, #001242 0%, #002366 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-item.active .faq-icon-plus {
+            display: none;
+        }
+        .faq-item:not(.active) .faq-icon-minus {
+            display: none;
+        }
+        .accent-color {
+            color: #00E0FF;
+        }
+        .accent-bg {
+            background-color: #00E0FF;
+        }
+        .accent-border {
+            border-color: #00E0FF;
+        }
+        .dark-blue {
+            background-color: #001242;
+        }
+        .btn-primary {
+            background-color: #00E0FF;
+            color: #001242;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #00c4e0;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header/Navbar -->
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="mr-2">
+                    <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 5C14.5 5 5 14.5 5 25C5 35.5 14.5 45 25 45C35.5 45 45 35.5 45 25C45 14.5 35.5 5 25 5Z" fill="#001242"/>
+                        <path d="M25 15C20.5 15 17 18.5 17 23C17 27.5 20.5 31 25 31C29.5 31 33 27.5 33 23C33 18.5 29.5 15 25 15Z" fill="#00E0FF"/>
+                        <path d="M15 32C12.5 32 10 34.5 10 37C10 39.5 12.5 42 15 42C17.5 42 20 39.5 20 37C20 34.5 17.5 32 15 32Z" fill="#00E0FF"/>
+                        <path d="M35 32C32.5 32 30 34.5 30 37C30 39.5 32.5 42 35 42C37.5 42 40 39.5 40 37C40 34.5 37.5 32 35 32Z" fill="#00E0FF"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-800">Clínica Integrativa</h1>
+                    <p class="text-xs text-gray-600">Psicanálise & Biomedicina</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-800 hover:text-cyan-500 transition-colors">Home</a>
+                <a href="#sobre" class="text-gray-800 hover:text-cyan-500 transition-colors">Sobre</a>
+                <a href="#servicos" class="text-gray-800 hover:text-cyan-500 transition-colors">Serviços</a>
+                <a href="#depoimentos" class="text-gray-800 hover:text-cyan-500 transition-colors">Depoimentos</a>
+                <a href="#blog" class="text-gray-800 hover:text-cyan-500 transition-colors">Blog</a>
+                <a href="#faq" class="text-gray-800 hover:text-cyan-500 transition-colors">FAQ</a>
+                <a href="#contato" class="text-gray-800 hover:text-cyan-500 transition-colors">Contato</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Social Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-cyan-500 transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-cyan-500 transition-colors">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-cyan-500 transition-colors">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+            <a href="#home" class="block py-2 text-gray-800 hover:text-cyan-500">Home</a>
+            <a href="#sobre" class="block py-2 text-gray-800 hover:text-cyan-500">Sobre</a>
+            <a href="#servicos" class="block py-2 text-gray-800 hover:text-cyan-500">Serviços</a>
+            <a href="#depoimentos" class="block py-2 text-gray-800 hover:text-cyan-500">Depoimentos</a>
+            <a href="#blog" class="block py-2 text-gray-800 hover:text-cyan-500">Blog</a>
+            <a href="#faq" class="block py-2 text-gray-800 hover:text-cyan-500">FAQ</a>
+            <a href="#contato" class="block py-2 text-gray-800 hover:text-cyan-500">Contato</a>
+            <div class="flex space-x-4 py-2">
+                <a href="#" class="text-gray-600 hover:text-cyan-500">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-cyan-500">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-cyan-500">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white pt-28 pb-16 md:pt-32 md:pb-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Te ajudo a encontrar o equilíbrio que você busca.</h1>
+                <p class="text-xl mb-8">Sua saúde mental é importante: invista em você mesmo.</p>
+                <a href="#contato" class="btn-primary font-medium py-3 px-8 rounded-full inline-flex items-center">
+                    Agende uma Consulta
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%201%20-pagina%20inicial-skgmRhwLPOftGuuNK6HgMehJ1X1XCt.png" alt="Profissional de saúde mental" class="rounded-lg shadow-xl max-w-full h-auto">
+                    <div class="absolute -bottom-3 -right-3 w-full h-full border-4 border-cyan-400 rounded-lg -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós Section -->
+    <section id="sobre" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Sobre Nós</h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Quem Somos?</h3>
+                    <p class="text-gray-600 mb-6">
+                        Somos uma clínica integrativa especializada em psicanálise e biomedicina, com mais de 15 anos de experiência em ajudar pessoas a alcançarem seus objetivos e viverem uma vida mais plena e significativa. Acreditamos que a saúde mental é fundamental para o bem-estar geral e que a terapia pode ser uma ferramenta poderosa para lidar com desafios, superar traumas e construir uma vida mais autêntica e feliz.
+                    </p>
+                    
+                    <h4 class="text-xl font-medium text-gray-800 mb-3">Nossa filosofia de trabalho:</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-cyan-500 mr-2">•</span>
+                            <span class="text-gray-600"><strong>Escuta ativa e empatia:</strong> Criamos um espaço seguro e acolhedor para você se expressar livremente e ser ouvido sem julgamentos.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-500 mr-2">•</span>
+                            <span class="text-gray-600"><strong>Colaboração:</strong> Trabalhamos juntos para identificar os padrões e comportamentos que estão te impedindo de alcançar seus objetivos e desenvolver estratégias para superá-los.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-500 mr-2">•</span>
+                            <span class="text-gray-600"><strong>Foco no presente e no futuro:</strong> A terapia não se trata apenas de reexaminar o passado, mas sim de te ajudar a construir um futuro mais positivo e promissor.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="relative">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%202%20-%20sobre%20n%C3%B3s-gvlmVWbAwYtfhx6Y7v8VxK2cJKUasb.png" alt="Profissional da clínica" class="rounded-lg shadow-lg max-w-full h-auto">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-cyan-400 rounded-full -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 dark-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">Nossos Serviços</h2>
+                <p class="text-cyan-300">Conheça nossas principais áreas de especialização</p>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Serviço 1 -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-brain text-3xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Psicanálise</h3>
+                    <p class="text-gray-300">Processo terapêutico que busca compreender o inconsciente e seus impactos na vida cotidiana, promovendo autoconhecimento e transformação pessoal.</p>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-heart text-3xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Terapia Sexual</h3>
+                    <p class="text-gray-300">Abordagem terapêutica focada em questões relacionadas à sexualidade, intimidade e relacionamentos, promovendo uma vida sexual saudável e satisfatória.</p>
+                </div>
+                
+                <!-- Serviço 3 -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-users text-3xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Constelação Familiar</h3>
+                    <p class="text-gray-300">Método terapêutico que revela dinâmicas ocultas nos sistemas familiares, ajudando a resolver conflitos e padrões repetitivos através de representações.</p>
+                </div>
+                
+                <!-- Serviço 4 -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-wind text-3xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Ozonioterapia</h3>
+                    <p class="text-gray-300">Tratamento que utiliza ozônio medicinal para melhorar a oxigenação dos tecidos, estimular o sistema imunológico e promover a regeneração celular.</p>
+                </div>
+                
+                <!-- Serviço 5 -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-spa text-3xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Aromaterapia</h3>
+                    <p class="text-gray-300">Terapia natural que utiliza óleos essenciais para promover bem-estar físico e emocional, equilibrando corpo e mente através de aromas terapêuticos.</p>
+                </div>
+                
+                <!-- Serviço 6 -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-clock-rotate-left text-3xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Regressão</h3>
+                    <p class="text-gray-300">Técnica terapêutica que permite acessar memórias e experiências passadas para compreender e resolver traumas e bloqueios emocionais atuais.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contato" class="btn-primary font-medium py-3 px-8 rounded-full inline-flex items-center">
+                    Ver Todos os Serviços
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">O que esperar do processo psicoterapêutico</h2>
+                <p class="text-gray-600">Juntos, construiremos um futuro mais feliz e saudável</p>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%204%20-%20depoimentos-5rWuGwg0DD23QX8IgxRKVz4kRGvguc.png" alt="Sigilo completo" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Sigilo completo</h3>
+                    <p class="text-gray-600">
+                        O trabalho clínico se pauta pela ética profissional da psicanálise, garantindo o sigilo dos conteúdos abordados nos atendimentos.
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%204%20-%20depoimentos-5rWuGwg0DD23QX8IgxRKVz4kRGvguc.png" alt="Escuta qualificada" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Escuta qualificada</h3>
+                    <p class="text-gray-600">
+                        Se algo faz você sofrer, então isso é importante e merece atenção. Nenhum sofrimento é irrelevante para a terapeuta.
+                    </p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%204%20-%20depoimentos-5rWuGwg0DD23QX8IgxRKVz4kRGvguc.png" alt="Sem julgamentos" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Sem julgamentos</h3>
+                    <p class="text-gray-600">
+                        As possibilidades da psicanálise são muitas: o sujeito em análise passa a se escutar. Isso é promovido por um espaço de escuta livre e sem censura.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">O que dizem nossos pacientes</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                        <div class="text-cyan-500 mb-4">
+                            <i class="fas fa-quote-left text-3xl"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "A terapia mudou completamente minha vida. Aprendi a lidar com minha ansiedade e hoje consigo enfrentar situações que antes me paralisavam. Sou muito grata por todo o acolhimento e profissionalismo."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Maria S.</h4>
+                                <div class="text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                        <div class="text-cyan-500 mb-4">
+                            <i class="fas fa-quote-left text-3xl"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "Depois de anos lutando contra a depressão, finalmente encontrei um tratamento que realmente funciona. A abordagem integrativa fez toda a diferença no meu processo de cura. Recomendo a todos."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Carlos R.</h4>
+                                <div class="text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                        <div class="text-cyan-500 mb-4">
+                            <i class="fas fa-quote-left text-3xl"></i>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            "A combinação de terapias tradicionais e integrativas foi exatamente o que eu precisava. Minha qualidade de vida melhorou significativamente e agora consigo lidar melhor com o estresse do dia a dia."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Ana P.</h4>
+                                <div class="text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Nosso Blog</h2>
+                <p class="text-gray-600">Não deixe de conferir os últimos posts do nosso blog</p>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%205%20-%20blog-OTHlQmd9sCd9oxVYD61GG39tXtt2jF.png" alt="Ansiedade" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-cyan-500 text-white text-xs font-medium px-2 py-1 rounded">
+                            16 de maio de 2023
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 to-transparent p-6">
+                            <span class="text-cyan-300 text-sm font-medium">Ansiedade</span>
+                            <h3 class="text-white text-xl font-semibold mt-1">Lidando com a Ansiedade no Dia a Dia: Dicas para uma Vida Mais Tranquila</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Descubra técnicas eficazes para gerenciar a ansiedade e encontrar mais equilíbrio no seu dia a dia. Aprenda a identificar gatilhos e desenvolver estratégias de enfrentamento.
+                        </p>
+                        <a href="#" class="text-cyan-500 font-medium inline-flex items-center">
+                            Ler mais
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%205%20-%20blog-OTHlQmd9sCd9oxVYD61GG39tXtt2jF.png" alt="Relacionamentos" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-cyan-500 text-white text-xs font-medium px-2 py-1 rounded">
+                            16 de maio de 2023
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 to-transparent p-6">
+                            <span class="text-cyan-300 text-sm font-medium">Relacionamentos</span>
+                            <h3 class="text-white text-xl font-semibold mt-1">Construindo Relacionamentos Saudáveis: Comunicação, Empatia e Resolução de Conflitos</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Explore os fundamentos de relacionamentos saudáveis e duradouros. Aprenda como a comunicação efetiva e a empatia podem transformar suas conexões pessoais.
+                        </p>
+                        <a href="#" class="text-cyan-500 font-medium inline-flex items-center">
+                            Ler mais
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parte%205%20-%20blog-OTHlQmd9sCd9oxVYD61GG39tXtt2jF.png" alt="Saúde Mental" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-cyan-500 text-white text-xs font-medium px-2 py-1 rounded">
+                            16 de maio de 2023
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 to-transparent p-6">
+                            <span class="text-cyan-300 text-sm font-medium">Saúde Mental</span>
+                            <h3 class="text-white text-xl font-semibold mt-1">Cuidando da Saúde Mental: Desmistificando Mitos e Buscando Ajuda</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Conheça os principais mitos sobre saúde mental e aprenda a identificar quando é hora de buscar ajuda profissional. Cuide do seu bem-estar emocional.
+                        </p>
+                        <a href="#" class="text-cyan-500 font-medium inline-flex items-center">
+                            Ler mais
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="text-cyan-500 font-medium inline-flex items-center">
+                    Ver Todos os Artigos
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 dark-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-2">Perguntas Frequentes</h2>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item border border-gray-700 rounded-lg mb-4 overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left focus:outline-none">
+                        <span class="text-lg font-medium">Como agendar uma consulta?</span>
+                        <span class="faq-icon-plus">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </span>
+                        <span class="faq-icon-minus hidden">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer bg-gray-900 bg-opacity-50 px-5 pb-5">
+                        <p class="text-gray-300">
+                            Para agendar uma consulta, você pode entrar em contato conosco através do telefone, WhatsApp ou preenchendo o formulário de contato em nosso site. Nossa equipe retornará o mais breve possível para confirmar sua consulta e fornecer todas as informações necessárias.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item border border-gray-700 rounded-lg mb-4 overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left focus:outline-none">
+                        <span class="text-lg font-medium">O que é uma terapia integrativa?</span>
+                        <span class="faq-icon-plus">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </span>
+                        <span class="faq-icon-minus hidden">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer bg-gray-900 bg-opacity-50 px-5 pb-5">
+                        <p class="text-gray-300">
+                            A terapia integrativa é uma abordagem que combina diferentes métodos terapêuticos, tanto convencionais quanto complementares, para tratar a pessoa como um todo - corpo, mente e espírito. Ela reconhece a importância de considerar todos os aspectos da vida de uma pessoa para promover a cura e o bem-estar.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item border border-gray-700 rounded-lg mb-4 overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left focus:outline-none">
+                        <span class="text-lg font-medium">Os atendimentos são online ou presenciais?</span>
+                        <span class="faq-icon-plus">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </span>
+                        <span class="faq-icon-minus hidden">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer bg-gray-900 bg-opacity-50 px-5 pb-5">
+                        <p class="text-gray-300">
+                            Oferecemos ambas as modalidades de atendimento. As consultas presenciais são realizadas em nossa clínica, enquanto as consultas online são feitas através de plataformas seguras de videoconferência. A escolha entre online ou presencial depende da sua preferência e necessidade, bem como do tipo de terapia a ser realizada.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item border border-gray-700 rounded-lg mb-4 overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left focus:outline-none">
+                        <span class="text-lg font-medium">Como funcionam os planos de tratamento?</span>
+                        <span class="faq-icon-plus">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </span>
+                        <span class="faq-icon-minus hidden">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer bg-gray-900 bg-opacity-50 px-5 pb-5">
+                        <p class="text-gray-300">
+                            Após a consulta inicial, desenvolvemos um plano de tratamento personalizado com base nas suas necessidades específicas. Este plano pode incluir diferentes modalidades terapêuticas e será ajustado conforme seu progresso. Discutimos todas as opções e recomendações com você, garantindo que você esteja confortável e informado sobre seu processo terapêutico.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item border border-gray-700 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-5 text-left focus:outline-none">
+                        <span class="text-lg font-medium">Qual a duração e frequência das sessões?</span>
+                        <span class="faq-icon-plus">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </span>
+                        <span class="faq-icon-minus hidden">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer bg-gray-900 bg-opacity-50 px-5 pb-5">
+                        <p class="text-gray-300">
+                            As sessões de terapia geralmente duram entre 50 a 60 minutos. A frequência das sessões varia de acordo com suas necessidades individuais, mas normalmente começamos com sessões semanais. À medida que você progride, podemos ajustar para sessões quinzenais ou mensais. Algumas terapias integrativas podem ter durações diferentes, o que será discutido durante sua consulta inicial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Fale Conosco</h2>
+                <p class="text-gray-600">Agende sua consulta preenchendo o formulário abaixo</p>
+                <div class="w-20 h-1 bg-cyan-400 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-2">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary w-full py-3 px-6 rounded-lg font-medium">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-8">
+                    <div class="bg-gray-100 rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Informações de Contato</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-cyan-500 mr-3 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Endereço</h4>
+                                    <p class="text-gray-600">Rua Florianópolis, 150, Centro - Uberlândia/MG</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-cyan-500 mr-3 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Telefone</h4>
+                                    <p class="text-gray-600">(34) 9 9999-3333</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-cyan-500 mr-3 mt-1">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">WhatsApp</h4>
+                                    <p class="text-gray-600">(34) 9 9999-3333</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-cyan-500 mr-3 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">E-mail</h4>
+                                    <p class="text-gray-600">contato@clinicaintegrativa.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="text-cyan-500 mr-3 mt-1">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Horário de Funcionamento</h4>
+                                    <p class="text-gray-600">Segunda a Sexta: 8h às 19h</p>
+                                    <p class="text-gray-600">Sábado: 8h às 12h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rounded-lg overflow-hidden h-64">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.2137089489394!2d-48.27645908469611!3d-18.91974198717173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a445e5f5f90b29%3A0x5a72c982bfcf0b9d!2sUberl%C3%A2ndia%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1652789562975!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="dark-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo e Sobre -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="mr-2">
+                            <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 5C14.5 5 5 14.5 5 25C5 35.5 14.5 45 25 45C35.5 45 45 35.5 45 25C45 14.5 35.5 5 25 5Z" fill="#001242"/>
+                                <path d="M25 15C20.5 15 17 18.5 17 23C17 27.5 20.5 31 25 31C29.5 31 33 27.5 33 23C33 18.5 29.5 15 25 15Z" fill="#00E0FF"/>
+                                <path d="M15 32C12.5 32 10 34.5 10 37C10 39.5 12.5 42 15 42C17.5 42 20 39.5 20 37C20 34.5 17.5 32 15 32Z" fill="#00E0FF"/>
+                                <path d="M35 32C32.5 32 30 34.5 30 37C30 39.5 32.5 42 35 42C37.5 42 40 39.5 40 37C40 34.5 37.5 32 35 32Z" fill="#00E0FF"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Clínica Integrativa</h3>
+                            <p class="text-xs text-gray-300">Psicanálise & Biomedicina</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Te ajudo a encontrar o equilíbrio que você busca.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links Rápidos -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-cyan-400 transition-colors">Home</a></li>
+                        <li><a href="#sobre" class="text-gray-300 hover:text-cyan-400 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#servicos" class="text-gray-300 hover:text-cyan-400 transition-colors">Serviços</a></li>
+                        <li><a href="#depoimentos" class="text-gray-300 hover:text-cyan-400 transition-colors">Depoimentos</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-cyan-400 transition-colors">Blog</a></li>
+                        <li><a href="#faq" class="text-gray-300 hover:text-cyan-400 transition-colors">FAQ</a></li>
+                        <li><a href="#contato" class="text-gray-300 hover:text-cyan-400 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Serviços -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">Nossos Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Psicanálise</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Terapia Sexual</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Constelação Familiar</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Ozonioterapia</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Aromaterapia</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-cyan-400 transition-colors">Regressão</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-300 mb-4">
+                        Inscreva-se para receber nossas novidades e artigos sobre saúde mental e bem-estar.
+                    </p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Seu e-mail" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
+                        <button type="submit" class="btn-primary w-full py-2 px-4 rounded-lg font-medium">
+                            Inscrever-se
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2023 Clínica Integrativa. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // FAQ Accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const faqItem = toggle.parentElement;
+                const faqAnswer = toggle.nextElementSibling;
+                const iconPlus = toggle.querySelector('.faq-icon-plus');
+                const iconMinus = toggle.querySelector('.faq-icon-minus');
+                
+                // Toggle current item
+                faqItem.classList.toggle('active');
+                
+                // Show/hide icons
+                iconPlus.classList.toggle('hidden');
+                iconMinus.classList.toggle('hidden');
+                
+                // Expand/collapse answer
+                if (faqItem.classList.contains('active')) {
+                    faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+                } else {
+                    faqAnswer.style.maxHeight = '0';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

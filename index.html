@@ -83,6 +83,10 @@
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .testimonial-img-container:hover .testimonial-img {
+            transform: scale(1.1);
         }
         .logo-hero {
             max-width: 90%;
@@ -97,7 +101,7 @@
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
                 <!-- Logo BiomedLim no header -->
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BiomedLim_logotipo%20principal.png-s1ulgRGSIAzETeJCk2AJu0fx0FwLNQ.jpeg" alt="BiomedLim Logo" class="h-14 mr-2">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" alt="BiomedLim Logo" class="h-14 mr-2">
             </div>
             
             <!-- Desktop Menu -->
@@ -174,10 +178,10 @@
             </div>
             <div class="md:w-1/2 flex justify-center">
                 <div class="relative">
-                    <!-- Logo BiomedLim na hero section sem fundo branco -->
+                    <!-- Logo BiomedLim na hero section com fundo transparente -->
                     <div class="flex justify-center items-center w-full h-full">
                         <img 
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BiomedLim_logotipo%20principal.png-s1ulgRGSIAzETeJCk2AJu0fx0FwLNQ.jpeg" 
+                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" 
                             alt="BiomedLim Logo" 
                             class="max-w-full h-auto drop-shadow-lg"
                             style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
@@ -222,8 +226,8 @@
                 
                 <div class="md:w-1/2 md:pl-12">
                     <div class="relative">
-                        <!-- Nova imagem representando uma clínica multinacional moderna -->
-                        <img src="/placeholder.svg?height=400&width=600" alt="Clínica Multinacional Moderna" class="rounded-lg shadow-lg max-w-full h-auto">
+                        <!-- Nova imagem da clínica -->
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clinica-Ammfb98fuDmtqHCGHUc3dl26BnTZJ9.webp" alt="Clínica Multinacional Moderna" class="rounded-lg shadow-lg max-w-full h-auto">
                         <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full -z-10"></div>
                     </div>
                 </div>
@@ -348,7 +352,7 @@
                 <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">O que dizem nossos pacientes</h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Depoimento 1 - Com imagem simbólica feminina -->
+                    <!-- Depoimento 1 - Com imagem de Maria -->
                     <div class="bg-gray-50 rounded-lg p-6 shadow-md">
                         <div class="text-yellow-500 mb-4">
                             <i class="fas fa-quote-left text-3xl"></i>
@@ -357,9 +361,9 @@
                             "A terapia mudou completamente minha vida. Aprendi a lidar com minha ansiedade e hoje consigo enfrentar situações que antes me paralisavam. Sou muito grata por todo o acolhimento e profissionalismo."
                         </p>
                         <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                                <!-- Imagem simbólica feminina -->
-                                <img src="/placeholder.svg?height=50&width=50" alt="Maria S." class="testimonial-img">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden testimonial-img-container">
+                                <!-- Imagem de Maria -->
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Maria-B18V7GEoRhVFfVeCpl9McCsYKpU3bG.png" alt="Maria S." class="testimonial-img">
                             </div>
                             <div>
                                 <h4 class="font-medium text-gray-800">Maria S.</h4>
@@ -374,7 +378,7 @@
                         </div>
                     </div>
                     
-                    <!-- Depoimento 2 - Com imagem simbólica masculina -->
+                    <!-- Depoimento 2 - Com imagem de Carlos -->
                     <div class="bg-gray-50 rounded-lg p-6 shadow-md">
                         <div class="text-yellow-500 mb-4">
                             <i class="fas fa-quote-left text-3xl"></i>
@@ -383,9 +387,9 @@
                             "Depois de anos lutando contra a depressão, finalmente encontrei um tratamento que realmente funciona. A abordagem integrativa fez toda a diferença no meu processo de cura. Recomendo a todos."
                         </p>
                         <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                                <!-- Imagem simbólica masculina -->
-                                <img src="/placeholder.svg?height=50&width=50" alt="Carlos R." class="testimonial-img">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden testimonial-img-container">
+                                <!-- Imagem de Carlos -->
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Carlos-pDYLr8fgclaSQwJ76M3CNMIOtnqJkA.png" alt="Carlos R." class="testimonial-img">
                             </div>
                             <div>
                                 <h4 class="font-medium text-gray-800">Carlos R.</h4>
@@ -400,7 +404,7 @@
                         </div>
                     </div>
                     
-                    <!-- Depoimento 3 - Com imagem simbólica feminina -->
+                    <!-- Depoimento 3 - Com imagem de Ana -->
                     <div class="bg-gray-50 rounded-lg p-6 shadow-md">
                         <div class="text-yellow-500 mb-4">
                             <i class="fas fa-quote-left text-3xl"></i>
@@ -409,9 +413,9 @@
                             "A combinação de terapias tradicionais e integrativas foi exatamente o que eu precisava. Minha qualidade de vida melhorou significativamente e agora consigo lidar melhor com o estresse do dia a dia."
                         </p>
                         <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                                <!-- Imagem simbólica feminina -->
-                                <img src="/placeholder.svg?height=50&width=50" alt="Ana P." class="testimonial-img">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden testimonial-img-container">
+                                <!-- Imagem de Ana -->
+                                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ana-Sxban8NBDpsNkD3sw2dKEsqpblIV1L.png" alt="Ana P." class="testimonial-img">
                             </div>
                             <div>
                                 <h4 class="font-medium text-gray-800">Ana P.</h4>
@@ -440,10 +444,10 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
+                <!-- Blog Post 1 - Ansiedade -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="relative">
-                        <img src="/placeholder.svg?height=300&width=500" alt="Ansiedade" class="w-full h-64 object-cover">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ansiedade-uf7YorVzTbDrocG9iinoZQStzkqcrA.webp" alt="Ansiedade" class="w-full h-64 object-cover">
                         <div class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-medium px-2 py-1 rounded">
                             16 de maio de 2023
                         </div>
@@ -465,10 +469,10 @@
                     </div>
                 </div>
                 
-                <!-- Blog Post 2 -->
+                <!-- Blog Post 2 - Relacionamentos -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="relative">
-                        <img src="/placeholder.svg?height=300&width=500" alt="Relacionamentos" class="w-full h-64 object-cover">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/relacionamentos.jpg-T41vUUq3AxH04LowN7cTm4FZuLMiTo.jpeg" alt="Relacionamentos" class="w-full h-64 object-cover">
                         <div class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-medium px-2 py-1 rounded">
                             16 de maio de 2023
                         </div>
@@ -490,10 +494,10 @@
                     </div>
                 </div>
                 
-                <!-- Blog Post 3 -->
+                <!-- Blog Post 3 - Saúde Mental -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="relative">
-                        <img src="/placeholder.svg?height=300&width=500" alt="Saúde Mental" class="w-full h-64 object-cover">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/saude%20mental.jpg-sofoZ0W1KzNBFd5CRLzUnUyEQKLHZp.jpeg" alt="Saúde Mental" class="w-full h-64 object-cover">
                         <div class="absolute top-4 left-4 bg-yellow-500 text-white text-xs font-medium px-2 py-1 rounded">
                             16 de maio de 2023
                         </div>
@@ -523,7 +527,7 @@
                     <span class="text-sm text-gray-500 mr-4">16 de maio de 2023</span>
                     <span class="text-sm bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Ansiedade</span>
                 </div>
-                <img src="/placeholder.svg?height=400&width=800" alt="Ansiedade" class="w-full h-auto rounded-lg mb-6">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ansiedade-uf7YorVzTbDrocG9iinoZQStzkqcrA.webp" alt="Ansiedade" class="w-full h-auto rounded-lg mb-6">
                 <div class="prose max-w-none">
                     <p class="mb-4">A ansiedade é uma resposta natural do nosso corpo a situações de estresse ou perigo. No entanto, quando essa resposta se torna desproporcional ou persistente, pode afetar significativamente nossa qualidade de vida.</p>
                     <p class="mb-4">Neste artigo, vamos explorar algumas técnicas eficazes para gerenciar a ansiedade no dia a dia e encontrar mais equilíbrio emocional.</p>
@@ -554,7 +558,7 @@
                     <span class="text-sm text-gray-500 mr-4">16 de maio de 2023</span>
                     <span class="text-sm bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Relacionamentos</span>
                 </div>
-                <img src="/placeholder.svg?height=400&width=800" alt="Relacionamentos" class="w-full h-auto rounded-lg mb-6">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/relacionamentos.jpg-T41vUUq3AxH04LowN7cTm4FZuLMiTo.jpeg" alt="Relacionamentos" class="w-full h-auto rounded-lg mb-6">
                 <div class="prose max-w-none">
                     <p class="mb-4">Relacionamentos saudáveis são fundamentais para nosso bem-estar emocional e mental. Eles nos proporcionam apoio, compreensão e um senso de pertencimento. No entanto, construir e manter relacionamentos saudáveis requer esforço, comunicação efetiva e habilidades de resolução de conflitos.</p>
                     <h4 class="text-xl font-semibold mb-3 mt-6">A importância da comunicação efetiva</h4>
@@ -584,7 +588,7 @@
                     <span class="text-sm text-gray-500 mr-4">16 de maio de 2023</span>
                     <span class="text-sm bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Saúde Mental</span>
                 </div>
-                <img src="/placeholder.svg?height=400&width=800" alt="Saúde Mental" class="w-full h-auto rounded-lg mb-6">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/saude%20mental.jpg-sofoZ0W1KzNBFd5CRLzUnUyEQKLHZp.jpeg" alt="Saúde Mental" class="w-full h-auto rounded-lg mb-6">
                 <div class="prose max-w-none">
                     <p class="mb-4">A saúde mental é tão importante quanto a saúde física, mas infelizmente ainda é cercada por estigmas e mitos que podem impedir as pessoas de buscar a ajuda de que precisam. Neste artigo, vamos desmistificar alguns desses mitos e discutir a importância de cuidar da saúde mental.</p>
                     <h4 class="text-xl font-semibold mb-3 mt-6">Mito 1: Problemas de saúde mental são raros</h4>
@@ -760,27 +764,27 @@
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
                     <!-- Formulário com Formspree -->
-                    <form class="space-y-6" action="https://formspree.io/f/seu-endereco" method="POST">
+                    <form class="space-y-6" action="https://formspree.io/f/matheusjacob180@gmail.com" method="POST">
                         <input type="hidden" name="_redirect" value="https://seusite.com.br/obrigado.html">
                         
                         <div>
                             <label for="name" class="block text-gray-700 mb-2">Nome Completo</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            <input type="text" id="name" name="name" placeholder="Seu nome" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
                         </div>
                         
                         <div>
                             <label for="email" class="block text-gray-700 mb-2">E-mail</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            <input type="email" id="email" name="email" placeholder="Seu e-mail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required>
                         </div>
                         
                         <div>
                             <label for="phone" class="block text-gray-700 mb-2">Telefone</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            <input type="tel" id="phone" name="phone" placeholder="Seu telefone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400">
                         </div>
                         
                         <div>
                             <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
+                            <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn-primary w-full py-3 px-6 rounded-lg font-medium">
@@ -918,7 +922,7 @@
             <div class="md:col-span-1">
                 <div class="flex items-center mb-4">
                     <!-- Logo BiomedLim no footer -->
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BiomedLim_logotipo%20principal.png-s1ulgRGSIAzETeJCk2AJu0fx0FwLNQ.jpeg" alt="BiomedLim Logo" class="h-16 mr-2">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" alt="BiomedLim Logo" class="h-16 mr-2">
                 </div>
                 <p class="text-gray-300 mb-4">
                     Te ajudamos a encontrar o equilíbrio que você busca.

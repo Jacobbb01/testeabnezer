@@ -15,7 +15,7 @@
             scroll-behavior: smooth;
         }
         .hero-gradient {
-            background: linear-gradient(90deg, #5D4B3C 0%, #8A7055 100%);
+            background: linear-gradient(135deg, #8A7055 0%, #5D4B3C 100%);
         }
         .service-card {
             transition: all 0.3s ease;
@@ -89,9 +89,29 @@
             transform: scale(1.1);
         }
         .logo-hero {
-            max-width: 90%;
+            max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            position: relative;
+            z-index: 1;
+        }
+        .logo-container {
+            background: linear-gradient(135deg, #8A7055 0%, #5D4B3C 100%);
+            border: 2px solid #D4AF37;
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.2) 0%, rgba(93, 75, 60, 0) 70%);
+            pointer-events: none;
         }
     </style>
 </head>
@@ -126,14 +146,14 @@
             
             <!-- Social Icons -->
             <div class="hidden md:flex items-center space-x-4">
-                <a href="#" class="text-gray-600 hover:text-yellow-600 transition-colors">
-                    <i class="fab fa-instagram">https://www.instagram.com/biomedlim/</i>
+                <a href="https://www.instagram.com/biomedlim/" target="_blank" class="text-gray-600 hover:text-yellow-600 transition-colors">
+                    <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="text-gray-600 hover:text-yellow-600 transition-colors">
-                    <i class="fab fa-whatsapp">wa.me/15996991811</i>
+                <a href="https://wa.me/15996991811" target="_blank" class="text-gray-600 hover:text-yellow-600 transition-colors">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" class="text-gray-600 hover:text-yellow-600 transition-colors">
-                    <i class="fab fa-facebook">https://www.facebook.com/abnezerlimadasilva/</i>
+                <a href="https://www.facebook.com/abnezerlimadasilva" target="_blank" class="text-gray-600 hover:text-yellow-600 transition-colors">
+                    <i class="fab fa-facebook"></i>
                 </a>
             </div>
         </div>
@@ -148,13 +168,13 @@
             <a href="#faq" class="block py-2 text-gray-800 hover:text-yellow-600">FAQ</a>
             <a href="#contato" class="block py-2 text-gray-800 hover:text-yellow-600">Contato</a>
             <div class="flex space-x-4 py-2">
-                <a href="#" class="text-gray-600 hover:text-yellow-600">
+                <a href="https://www.instagram.com/biomedlim/" target="_blank" class="text-gray-600 hover:text-yellow-600">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="text-gray-600 hover:text-yellow-600">
+                <a href="https://wa.me/15996991811" target="_blank" class="text-gray-600 hover:text-yellow-600">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" class="text-gray-600 hover:text-yellow-600">
+                <a href="https://www.facebook.com/abnezerlimadasilva" target="_blank" class="text-gray-600 hover:text-yellow-600">
                     <i class="fab fa-facebook"></i>
                 </a>
             </div>
@@ -178,15 +198,13 @@
             </div>
             <div class="md:w-1/2 flex justify-center">
                 <div class="relative">
-                    <!-- Logo BiomedLim na hero section com fundo transparente -->
-                    <div class="flex justify-center items-center w-full h-full">
+                    <!-- Logo BiomedLim na hero section com fundo estilizado -->
+                    <div class="logo-container flex justify-center items-center w-full h-full">
                         <img 
                             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" 
                             alt="BiomedLim Logo" 
-                            class="max-w-full h-auto drop-shadow-lg"
-                            style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));">
+                            class="logo-hero">
                     </div>
-                    <div class="absolute -bottom-3 -right-3 w-full h-full border-4 border-yellow-400 rounded-lg -z-10"></div>
                 </div>
             </div>
         </div>
@@ -824,7 +842,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-medium text-gray-800">Telefone</h4>
-                                        <p class="text-gray-600">(34) 9 9129-8633</p>
+                                        <p class="text-gray-600">(34) 9 9999-3333</p>
                                     </div>
                                 </div>
                                 
@@ -834,7 +852,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-medium text-gray-800">WhatsApp</h4>
-                                        <p class="text-gray-600">(41) 9 9129-8633</p>
+                                        <p class="text-gray-600">(34) 9 9999-3333</p>
                                     </div>
                                 </div>
                                 
@@ -878,7 +896,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-medium text-gray-800">Telefone</h4>
-                                        <p class="text-gray-600">(15) 9 9699-1811</p>
+                                        <p class="text-gray-600">(34) 9 9999-3333</p>
                                     </div>
                                 </div>
                                 
@@ -888,7 +906,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-medium text-gray-800">WhatsApp</h4>
-                                        <p class="text-gray-600">(15) 9 9699-1811</p>
+                                        <p class="text-gray-600">(34) 9 9999-3333</p>
                                     </div>
                                 </div>
                                 
@@ -928,13 +946,13 @@
                     Te ajudamos a encontrar o equilíbrio que você busca.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">
+                    <a href="https://www.facebook.com/abnezerlimadasilva" target="_blank" class="text-gray-300 hover:text-yellow-400 transition-colors">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">
+                    <a href="https://www.instagram.com/biomedlim/" target="_blank" class="text-gray-300 hover:text-yellow-400 transition-colors">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">
+                    <a href="https://wa.me/15996991811" target="_blank" class="text-gray-300 hover:text-yellow-400 transition-colors">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>

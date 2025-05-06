@@ -220,23 +220,44 @@
         background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(245, 244, 234, 0) 80%);
         pointer-events: none;
     }
+    .hero-text-container {
+    width: 100%;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 1.75rem !important;
+        line-height: 2.25rem !important;
+        margin-top: 1rem;
+    }
+    .hero-subtext {
+        font-size: 1rem !important;
+    }
+}
+@media (max-width: 768px) {
+    #home {
+        padding-top: 6rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
 </style>
 
 <!-- Hero Section - Logo Aumentada -->
 <section id="home" class="hero-gradient-new pt-28 pb-16 md:pt-32 md:pb-20">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 hero-text" style="color: #8a7055;">Te ajudamos a encontrar o equilíbrio que você busca.</h1>
-            <p class="text-xl mb-8 hero-text" style="color: #8a7055;">Sua saúde é importante: invista em você mesmo.</p>
-            <!-- Botão WhatsApp com link e mensagem automática -->
-            <a href="https://wa.me/5515996991811?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." 
-               class="btn-primary font-medium py-3 px-8 rounded-full inline-flex items-center">
-                Agende uma Consulta
-                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-            </a>
-        </div>
+        <div class="md:w-1/2 mb-10 md:mb-0 hero-text-container">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 hero-text" style="color: #8a7055;">Te ajudamos a encontrar o equilíbrio que você busca.</h1>
+    <p class="text-xl mb-8 hero-subtext" style="color: #8a7055;">Sua saúde é importante: invista em você mesmo.</p>
+    <!-- Botão WhatsApp com link e mensagem automática -->
+    <a href="https://wa.me/5515996991811?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." 
+       class="btn-primary font-medium py-3 px-8 rounded-full inline-flex items-center">
+        Agende uma Consulta
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+    </a>
+</div>
         <div class="md:w-1/2 flex justify-center">
             <div class="relative">
                 <!-- Logo BiomedLim na hero section - AUMENTADA -->

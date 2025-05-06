@@ -88,9 +88,15 @@
         .testimonial-img-container:hover .testimonial-img {
             transform: scale(1.1);
         }
-        .logo-hero {
-          max-width: 100%;
+        /* Estilos modificados para a logo maior */
+        .logo-header {
             height: auto;
+            width: 180px; /* Aumentado o tamanho da logo no header */
+        }
+        .logo-hero {
+            max-width: 100%;
+            height: auto;
+            width: 400px; /* Aumentado o tamanho da logo na hero section */
             filter: drop-shadow(0 4px 8px #f5f4ea);
             position: relative;
             z-index: 1;
@@ -112,6 +118,15 @@
             background: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, rgba(93, 75, 60, 0) 80%);
             pointer-events: none;
         }
+        /* Ajustes para responsividade da logo */
+        @media (max-width: 768px) {
+            .logo-header {
+                width: 150px;
+            }
+            .logo-hero {
+                width: 300px;
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -119,8 +134,8 @@
     <header class="fixed w-full bg-white bg-opacity-95 shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <!-- Logo BiomedLim no header -->
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" alt="BiomedLim Logo" class="h-14 mr-2">
+                <!-- Logo BiomedLim no header - AUMENTADO -->
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" alt="BiomedLim Logo" class="logo-header mr-2">
             </div>
             
             <!-- Desktop Menu -->
@@ -188,13 +203,6 @@
     .hero-text {
         color: #8a7055 !important; /* Forçando a cor com !important */
     }
-    .logo-hero {
-        max-width: 100%;
-        height: auto;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-        position: relative;
-        z-index: 1;
-    }
     .logo-container-new {
         display: flex;
         justify-content: center;
@@ -214,7 +222,7 @@
     }
 </style>
 
-<!-- Hero Section -->
+<!-- Hero Section - Logo Aumentada -->
 <section id="home" class="hero-gradient-new pt-28 pb-16 md:pt-32 md:pb-20">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-10 md:mb-0">
@@ -231,7 +239,7 @@
         </div>
         <div class="md:w-1/2 flex justify-center">
             <div class="relative">
-                <!-- Logo BiomedLim na hero section sem o retângulo marrom -->
+                <!-- Logo BiomedLim na hero section - AUMENTADA -->
                 <div class="logo-container-new">
                     <img 
                         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" 
@@ -243,7 +251,7 @@
     </div>
 </section>
 
-    <!-- Sobre Nós Section -->
+    <!-- Sobre Nós Section - Texto reescrito e foto atualizada -->
     <section id="sobre" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="mb-12 text-center">
@@ -255,7 +263,11 @@
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Quem Somos?</h3>
                     <p class="text-gray-600 mb-6">
-                        Somos uma clínica integrativa multinacional especializada em psicanálise e biomedicina, com mais de 15 anos de experiência em ajudar pessoas a alcançarem seus objetivos e viverem uma vida mais plena e significativa. Acreditamos que a saúde mental é fundamental para o bem-estar geral e que a terapia pode ser uma ferramenta poderosa para lidar com desafios, superar traumas e construir uma vida mais autêntica e feliz.
+                        A BiomedLim nasceu com a missão de proporcionar saúde mental, bem-estar e qualidade de vida para nossos clientes. Somos uma clínica integrativa multinacional especializada em psicanálise e biomedicina, com mais de 15 anos de experiência em ajudar pessoas a alcançarem seus objetivos e viverem uma vida mais plena e significativa.
+                    </p>
+                    
+                    <p class="text-gray-600 mb-6">
+                        Nossa abordagem única integra terapias tradicionais e complementares, criando um tratamento holístico que considera o indivíduo em sua totalidade. Acreditamos que a combinação da psicanálise com práticas biomédicas oferece resultados mais eficazes e duradouros, tratando não apenas os sintomas, mas também suas causas profundas.
                     </p>
                     
                     <h4 class="text-xl font-medium text-gray-800 mb-3">Nossa filosofia de trabalho:</h4>
@@ -270,15 +282,15 @@
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-600 mr-2">•</span>
-                            <span class="text-gray-600"><strong>Foco no presente e no futuro:</strong> A terapia não se trata apenas de reexaminar o passado, mas sim de te ajudar a construir um futuro mais positivo e promissor.</span>
+                            <span class="text-gray-600"><strong>Foco no presente e no futuro:</strong> Nossa terapia não se trata apenas de reexaminar o passado, mas sim de te ajudar a construir um futuro mais positivo e promissor, com ferramentas práticas para o seu dia a dia.</span>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="md:w-1/2 md:pl-12">
                     <div class="relative">
-                        <!-- Nova imagem da clínica -->
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clinica-Ammfb98fuDmtqHCGHUc3dl26BnTZJ9.webp" alt="Clínica Multinacional Moderna" class="rounded-lg shadow-lg max-w-full h-auto">
+                        <!-- Nova imagem da clínica - ATUALIZADA -->
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/118982c0-e788-4869-91a7-e1216de1a487_large.jpg-AtZ0aJmMQVIXqbARMf2s80S08B0hp6.jpeg" alt="Clínica BiomedLim" class="rounded-lg shadow-lg max-w-full h-auto">
                         <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full -z-10"></div>
                     </div>
                 </div>
@@ -286,7 +298,7 @@
         </div>
     </section>
 
-    <!-- Serviços Section -->
+    <!-- Serviços Section - EXPANDIDO com novos serviços -->
     <section id="servicos" class="py-20 dark-bg text-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -317,13 +329,22 @@
                 <!-- Serviço 3 -->
                 <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <i class="fas fa-users text-3xl text-yellow-400"></i>
+                        <i class="fas fa-stethoscope text-3xl text-yellow-400"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Constelação Familiar</h3>
-                    <p class="text-gray-300">Método terapêutico que revela dinâmicas ocultas nos sistemas familiares, ajudando a resolver conflitos e padrões repetitivos através de representações.</p>
+                    <h3 class="text-xl font-semibold mb-3">Psicopatologia</h3>
+                    <p class="text-gray-300">Estudo e tratamento dos transtornos mentais, suas causas, desenvolvimento e manifestações, visando o diagnóstico preciso e intervenções eficazes.</p>
                 </div>
                 
                 <!-- Serviço 4 -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-seedling text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Terapia Floral</h3>
+                    <p class="text-gray-300">Tratamento natural que utiliza essências florais para equilibrar emoções e estados mentais negativos, promovendo bem-estar emocional e harmonia interior.</p>
+                </div>
+                
+                <!-- Serviço 5 -->
                 <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                         <i class="fas fa-wind text-3xl text-yellow-400"></i>
@@ -332,16 +353,25 @@
                     <p class="text-gray-300">Tratamento que utiliza ozônio medicinal para melhorar a oxigenação dos tecidos, estimular o sistema imunológico e promover a regeneração celular.</p>
                 </div>
                 
-                <!-- Serviço 5 -->
+                <!-- Serviço 6 -->
                 <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                        <i class="fas fa-spa text-3xl text-yellow-400"></i>
+                        <i class="fas fa-users text-3xl text-yellow-400"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Aromaterapia</h3>
-                    <p class="text-gray-300">Terapia natural que utiliza óleos essenciais para promover bem-estar físico e emocional, equilibrando corpo e mente através de aromas terapêuticos.</p>
+                    <h3 class="text-xl font-semibold mb-3">Constelação Familiar</h3>
+                    <p class="text-gray-300">Método terapêutico que revela dinâmicas ocultas nos sistemas familiares, ajudando a resolver conflitos e padrões repetitivos através de representações.</p>
                 </div>
                 
-                <!-- Serviço 6 -->
+                <!-- Serviço 7 - NOVO -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-eye text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Hipnose</h3>
+                    <p class="text-gray-300">Técnica terapêutica que induz um estado alterado de consciência para acessar o subconsciente, facilitando mudanças comportamentais e emocionais.</p>
+                </div>
+                
+                <!-- Serviço 8 - NOVO -->
                 <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
                     <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                         <i class="fas fa-clock-rotate-left text-3xl text-yellow-400"></i>
@@ -349,9 +379,43 @@
                     <h3 class="text-xl font-semibold mb-3">Regressão</h3>
                     <p class="text-gray-300">Técnica terapêutica que permite acessar memórias e experiências passadas para compreender e resolver traumas e bloqueios emocionais atuais.</p>
                 </div>
+                
+                <!-- Serviço 9 - NOVO -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Terapia da Linha do Tempo</h3>
+                    <p class="text-gray-300">Abordagem que trabalha com a percepção subjetiva do tempo para resolver traumas passados e criar uma perspectiva mais positiva para o futuro.</p>
+                </div>
+                
+                <!-- Serviço 10 - NOVO -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-venus-mars text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Tratamento de Disfunções Sexuais</h3>
+                    <p class="text-gray-300">Abordagem especializada para tratar disfunções sexuais e promover educação sexual, melhorando a qualidade de vida e os relacionamentos íntimos.</p>
+                </div>
+                
+                <!-- Serviço 11 - NOVO -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-hospital-user text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Psicologia Clínica e Hospitalar</h3>
+                    <p class="text-gray-300">Atendimento especializado para pacientes com condições específicas como IAM, Oncologia e AIDS, oferecendo suporte psicológico durante o tratamento médico.</p>
+                </div>
+                
+                <!-- Serviço 12 - NOVO (Aromaterapia mantida do original) -->
+                <div class="service-card bg-gray-900 bg-opacity-30 rounded-lg p-6 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                        <i class="fas fa-spa text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Aromaterapia</h3>
+                    <p class="text-gray-300">Terapia natural que utiliza óleos essenciais para promover bem-estar físico e emocional, equilibrando corpo e mente através de aromas terapêuticos.</p>
+                </div>
             </div>
-            
-            <!-- Botão removido conforme solicitado -->
         </div>
     </section>
 
@@ -1009,12 +1073,12 @@
             <div class="md:col-span-1">
                 <h3 class="text-lg font-semibold mb-4">Nossos Serviços</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Psicanálise</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Terapia Sexual</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Constelação Familiar</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Ozonioterapia</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Aromaterapia</a></li>
-                    <li><a href="#" class="text-gray-300 hover:text-yellow-400 transition-colors">Regressão</a></li>
+                    <li><a href="#servicos" class="text-gray-300 hover:text-yellow-400 transition-colors">Psicanálise</a></li>
+                    <li><a href="#servicos" class="text-gray-300 hover:text-yellow-400 transition-colors">Terapia Sexual</a></li>
+                    <li><a href="#servicos" class="text-gray-300 hover:text-yellow-400 transition-colors">Psicopatologia</a></li>
+                    <li><a href="#servicos" class="text-gray-300 hover:text-yellow-400 transition-colors">Terapia Floral</a></li>
+                    <li><a href="#servicos" class="text-gray-300 hover:text-yellow-400 transition-colors">Ozonioterapia</a></li>
+                    <li><a href="#servicos" class="text-gray-300 hover:text-yellow-400 transition-colors">Constelação Familiar</a></li>
                 </ul>
             </div>
             

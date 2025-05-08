@@ -131,6 +131,16 @@
         
         /* Ajustes responsivos otimizados */
         @media (max-width: 768px) {
+            #home {
+                padding-top: 100px !important; /* Valor fixo e maior para garantir que o conteúdo fique abaixo do header */
+                margin-top: 0 !important;
+            }
+
+            .hero-heading-full {
+                padding-top: 20px !important; /* Espaço adicional para o título principal */
+                display: block;
+                width: 100%;
+            }
             .logo-header {
                 width: 120px;
             }
@@ -155,9 +165,8 @@
                 font-size: 1rem;
                 text-align: center;
             }
-            #home {
-                padding-top: 5rem !important;
-                padding-bottom: 2rem !important;
+            
+            padding-bottom: 2rem !important;
             }
             .hero-button-container {
                 display: flex;
@@ -175,12 +184,7 @@
                 clear: both;
             }
             /* Ajuste específico para o texto principal */
-            .hero-heading-full {
-                display: block;
-                width: 100%;
-                text-align: center;
-                margin-bottom: 0.5rem;
-            }
+            
         }
     </style>
 </head>
@@ -523,7 +527,6 @@
                             <div>
                                 <h4 class="font-medium text-gray-800">Maria S.</h4>
                                 <div class="text-yellow-500">
-                                    <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>

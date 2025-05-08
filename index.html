@@ -191,17 +191,17 @@
         .particles-container {
             position: absolute;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             top: 0;
             left: 0;
-            z-index: 1;
-            pointer-events: none;
+            z-index: 0;
         }
 
         /* Ajuste na seção hero para posicionar o conteúdo acima das partículas */
         #home {
             position: relative;
-            z-index: 2;
+            overflow: hidden;
+            z-index: 1;
             background: transparent !important;
         }
 
@@ -213,104 +213,38 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, rgba(221, 195, 97, 0.9) 0%, rgba(245, 244, 234, 0.9) 100%);
-            z-index: -1;
-        }
-
-        /* Limitar o efeito de partículas apenas à seção hero */
-        .particles-container {
-            clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100vh);
-            background-color: #f5f4ea;
+            z-index: 0;
         }
 
         /* Garantir que o texto e elementos da hero section tenham bom contraste */
         .hero-text, .hero-subtext {
             text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
             position: relative;
-            z-index: 10;
+            z-index: 2;
         }
 
         .btn-primary {
             position: relative;
-            z-index: 10;
+            z-index: 2;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .logo-hero {
             position: relative;
-            z-index: 10;
+            z-index: 2;
+        }
+
+        /* Garantir que o container da hero tenha z-index maior que as partículas */
+        .container {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Particles.js Container -->
-    <div id="particles-js" class="particles-container"></div>
-    <!-- Header/Navbar - Otimizado -->
-    <header class="fixed w-full bg-white bg-opacity-95 shadow-md z-50">
-        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <div class="flex items-center">
-                <!-- Logo BiomedLim no header - Tamanho mantido -->
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" alt="BiomedLim Logo" class="logo-header">
-            </div>
-            
-            <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="#home" class="text-gray-800 hover:text-yellow-600 transition-colors">Home</a>
-                <a href="#sobre" class="text-gray-800 hover:text-yellow-600 transition-colors">Sobre</a>
-                <a href="#servicos" class="text-gray-800 hover:text-yellow-600 transition-colors">Serviços</a>
-                <a href="#depoimentos" class="text-gray-800 hover:text-yellow-600 transition-colors">Depoimentos</a>
-                <a href="#blog" class="text-gray-800 hover:text-yellow-600 transition-colors">Blog</a>
-                <a href="#faq" class="text-gray-800 hover:text-yellow-600 transition-colors">FAQ</a>
-                <a href="#contato" class="text-gray-800 hover:text-yellow-600 transition-colors">Contato</a>
-            </nav>
-            
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-            
-            <!-- Social Icons -->
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="https://www.instagram.com/biomedlim/" target="_blank" class="text-gray-600 hover:text-yellow-600 transition-colors">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/15996991811" target="_blank" class="text-gray-600 hover:text-yellow-600 transition-colors">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.facebook.com/abnezerlimadasilva" target="_blank" class="text-gray-600 hover:text-yellow-600 transition-colors">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
-            <a href="#home" class="block py-2 text-gray-800 hover:text-yellow-600">Home</a>
-            <a href="#sobre" class="block py-2 text-gray-800 hover:text-yellow-600">Sobre</a>
-            <a href="#servicos" class="block py-2 text-gray-800 hover:text-yellow-600">Serviços</a>
-            <a href="#depoimentos" class="block py-2 text-gray-800 hover:text-yellow-600">Depoimentos</a>
-            <a href="#blog" class="block py-2 text-gray-800 hover:text-yellow-600">Blog</a>
-            <a href="#faq" class="block py-2 text-gray-800 hover:text-yellow-600">FAQ</a>
-            <a href="#contato" class="block py-2 text-gray-800 hover:text-yellow-600">Contato</a>
-            <div class="flex space-x-4 py-2">
-                <a href="https://www.instagram.com/biomedlim/" target="_blank" class="text-gray-600 hover:text-yellow-600">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/15996991811" target="_blank" class="text-gray-600 hover:text-yellow-600">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.facebook.com/abnezerlimadasilva" target="_blank" class="text-gray-600 hover:text-yellow-600">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-
     <!-- Hero Section - Completamente restruturada para corrigir o problema do texto cortado -->
     <section id="home" class="pt-28 pb-12 md:pt-32 md:pb-20">
+        <div id="particles-js" class="particles-container"></div>
         <div class="hero-gradient-overlay"></div>
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
@@ -634,8 +568,6 @@
                             <div>
                                 <h4 class="font-medium text-gray-800">Ana P.</h4>
                                 <div class="text-yellow-500">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -1435,7 +1367,8 @@
                 const heroSection = document.getElementById('home');
                 const particlesContainer = document.getElementById('particles-js');
                 if (heroSection && particlesContainer) {
-                    particlesContainer.style.height = heroSection.offsetHeight + 'px';
+                    particlesContainer.style.height = '100%';
+                    particlesContainer.style.width = '100%';
                 }
             }
 

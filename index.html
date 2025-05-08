@@ -186,9 +186,64 @@
             /* Ajuste específico para o texto principal */
             
         }
+
+        /* Estilos para o container de partículas */
+        .particles-container {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Ajuste na seção hero para posicionar o conteúdo acima das partículas */
+        #home {
+            position: relative;
+            z-index: 2;
+            background: transparent !important;
+        }
+
+        /* Gradiente de fundo para a seção hero */
+        .hero-gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(221, 195, 97, 0.9) 0%, rgba(245, 244, 234, 0.9) 100%);
+            z-index: -1;
+        }
+
+        /* Limitar o efeito de partículas apenas à seção hero */
+        .particles-container {
+            clip-path: polygon(0 0, 100% 0, 100% 100vh, 0 100vh);
+            background-color: #f5f4ea;
+        }
+
+        /* Garantir que o texto e elementos da hero section tenham bom contraste */
+        .hero-text, .hero-subtext {
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        .btn-primary {
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-hero {
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="bg-white">
+    <!-- Particles.js Container -->
+    <div id="particles-js" class="particles-container"></div>
     <!-- Header/Navbar - Otimizado -->
     <header class="fixed w-full bg-white bg-opacity-95 shadow-md z-50">
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
@@ -255,7 +310,8 @@
     </header>
 
     <!-- Hero Section - Completamente restruturada para corrigir o problema do texto cortado -->
-    <section id="home" class="hero-gradient-new pt-28 pb-12 md:pt-32 md:pb-20">
+    <section id="home" class="pt-28 pb-12 md:pt-32 md:pb-20">
+        <div class="hero-gradient-overlay"></div>
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <!-- Texto da hero - Colocado primeiro na ordem mobile -->
@@ -1261,6 +1317,131 @@
                     }
                 }
             });
+        });
+    </script>
+
+    <!-- Particles.js Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#8a7055"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#8a7055",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": false,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+
+            // Ajustar altura do container de partículas para corresponder à altura da seção hero
+            function adjustParticlesHeight() {
+                const heroSection = document.getElementById('home');
+                const particlesContainer = document.getElementById('particles-js');
+                if (heroSection && particlesContainer) {
+                    particlesContainer.style.height = heroSection.offsetHeight + 'px';
+                }
+            }
+
+            // Ajustar altura inicialmente e quando a janela for redimensionada
+            window.addEventListener('load', adjustParticlesHeight);
+            window.addEventListener('resize', adjustParticlesHeight);
         });
     </script>
 </body>

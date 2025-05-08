@@ -186,83 +186,10 @@
             /* Ajuste específico para o texto principal */
             
         }
-
-        /* Estilos para o container de partículas */
-        .particles-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Gradiente de fundo para a seção hero */
-        .hero-gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(221, 195, 97, 0.9) 0%, rgba(245, 244, 234, 0.9) 100%);
-            z-index: -1 !important; /* DEVE ficar atrás */
-        }
-
-        /* Ajuste na seção hero para posicionar o conteúdo acima das partículas */
-        #home {
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            background: transparent !important;
-            scroll-margin-top: 96px; /* âncora suave */
-            padding-top: 6rem;       /* espaço equivalente à altura do header */
-        }
-
-        @media (max-width: 768px) {
-            #home {
-                padding-top: 5rem;     /* menor no mobile para evitar espaço excessivo */
-            }
-        }
-
-        /* Garantir que o header esteja no topo */
-        header {
-            z-index: 999 !important;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Garantir que o texto e elementos da hero section tenham bom contraste */
-        .hero-text, .hero-subtext {
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
-            position: relative;
-            z-index: 2;
-        }
-
-        .btn-primary {
-            position: relative;
-            z-index: 2;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo-hero {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Garantir que o container da hero tenha z-index maior que as partículas */
-        .container {
-            position: relative;
-            z-index: 2;
-        }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header/Navbar - Restaurado -->
+    <!-- Header/Navbar - Otimizado -->
     <header class="fixed w-full bg-white bg-opacity-95 shadow-md z-50">
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
             <div class="flex items-center">
@@ -328,9 +255,7 @@
     </header>
 
     <!-- Hero Section - Completamente restruturada para corrigir o problema do texto cortado -->
-    <section id="home" class="pt-28 pb-12 md:pt-32 md:pb-20">
-        <div id="particles-js" class="particles-container"></div>
-        <div class="hero-gradient-overlay"></div>
+    <section id="home" class="hero-gradient-new pt-28 pb-12 md:pt-32 md:pb-20">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <!-- Texto da hero - Colocado primeiro na ordem mobile -->
@@ -543,6 +468,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">O que esperar do processo psicoterapêutico</h2>
                 <p class="text-gray-600">Juntos, construiremos um futuro mais feliz e saudável</p>
+                <div class="w-20 h-1 bg-yellow  construiremos um futuro mais feliz e saudável</p>
                 <div class="w-20 h-1 bg-yellow-400 mx-auto mt-4"></div>
             </div>
             
@@ -652,6 +578,8 @@
                             <div>
                                 <h4 class="font-medium text-gray-800">Ana P.</h4>
                                 <div class="text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -1334,26 +1262,6 @@
                 }
             });
         });
-    </script>
-
-    <!-- Particles.js Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Ajustar altura do container de partículas para corresponder à altura da seção hero
-        function adjustParticlesHeight() {
-            const heroSection = document.getElementById('home');
-            const particlesContainer = document.getElementById('particles-js');
-            if (heroSection && particlesContainer) {
-                particlesContainer.style.height = heroSection.offsetHeight + 'px';
-                particlesContainer.style.width = '100%';
-            }
-        }
-
-        // Ajustar altura inicialmente e quando a janela for redimensionada
-        window.addEventListener('load', adjustParticlesHeight);
-        window.addEventListener('resize', adjustParticlesHeight);
-        // Executar também após o carregamento completo da página para garantir
-        setTimeout(adjustParticlesHeight, 500);
     </script>
 </body>
 </html>

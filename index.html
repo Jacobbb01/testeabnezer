@@ -194,15 +194,8 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 0;
-        }
-
-        /* Ajuste na seção hero para posicionar o conteúdo acima das partículas */
-        #home {
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            background: transparent !important;
+            z-index: -1 !important; /* DEVE ficar atrás */
+            pointer-events: none;
         }
 
         /* Gradiente de fundo para a seção hero */
@@ -213,7 +206,22 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, rgba(221, 195, 97, 0.9) 0%, rgba(245, 244, 234, 0.9) 100%);
-            z-index: 0;
+            z-index: -1 !important; /* DEVE ficar atrás */
+        }
+
+        /* Ajuste na seção hero para posicionar o conteúdo acima das partículas */
+        #home {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background: transparent !important;
+        }
+
+        /* Garantir que o header esteja no topo */
+        header {
+            z-index: 999 !important;
+            position: fixed;
+            width: 100%;
         }
 
         /* Garantir que o texto e elementos da hero section tenham bom contraste */
@@ -1367,7 +1375,7 @@
                 const heroSection = document.getElementById('home');
                 const particlesContainer = document.getElementById('particles-js');
                 if (heroSection && particlesContainer) {
-                    particlesContainer.style.height = '100%';
+                    particlesContainer.style.height = heroSection.offsetHeight + 'px';
                     particlesContainer.style.width = '100%';
                 }
             }

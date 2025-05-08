@@ -139,14 +139,17 @@
                 margin-bottom: 1rem;
             }
             .logo-hero {
-                width: 220px;
+                width: 180px;
                 margin: 0 auto;
+                margin-bottom: 1.5rem;
             }
             .hero-text {
-                font-size: 1.5rem;
-                line-height: 2rem;
-                margin-top: 0.5rem;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                margin-top: 0;
                 text-align: center;
+                width: 100%;
+                display: block;
             }
             .hero-subtext {
                 font-size: 1rem;
@@ -163,16 +166,20 @@
             }
             /* Corrigindo a ordem dos elementos para evitar sobreposição */
             .hero-section-container {
-                flex-direction: column-reverse !important;
-            }
-            .hero-logo-container {
-                margin-bottom: 1.5rem;
+                flex-direction: column !important;
             }
             /* Garantindo que o texto não seja cortado */
             .hero-text-container {
-                margin-top: 1rem;
+                margin-top: 0;
                 padding: 0 15px;
                 clear: both;
+            }
+            /* Ajuste específico para o texto principal */
+            .hero-heading-full {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 0.5rem;
             }
         }
     </style>
@@ -243,20 +250,16 @@
         </div>
     </header>
 
-    <!-- Hero Section - Completamente restruturada e otimizada para evitar sobreposição -->
+    <!-- Hero Section - Completamente restruturada para corrigir o problema do texto cortado -->
     <section id="home" class="hero-gradient-new pt-28 pb-12 md:pt-32 md:pb-20">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col-reverse md:flex-row items-center hero-section-container">
-                <!-- Logo na seção hero - Colocada primeiro na ordem mobile -->
-                <div class="w-full md:w-1/2 flex justify-center hero-logo-container">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" 
-                         alt="BiomedLim Logo" 
-                         class="logo-hero">
-                </div>
-                
-                <!-- Texto da hero - Colocado depois da logo na ordem mobile -->
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Texto da hero - Colocado primeiro na ordem mobile -->
                 <div class="w-full md:w-1/2 hero-text-container">
-                    <h1 class="hero-text">Te ajudamos a encontrar o equilíbrio que você busca.</h1>
+                    <!-- Título completo em um único elemento para evitar quebras -->
+                    <h1 class="hero-heading-full hero-text">
+                        Te ajudamos a encontrar o equilíbrio que você busca.
+                    </h1>
                     <p class="hero-subtext">Sua saúde é importante: invista em você mesmo.</p>
                     <div class="hero-button-container">
                         <a href="https://wa.me/5515996991811?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta." 
@@ -267,6 +270,13 @@
                             </svg>
                         </a>
                     </div>
+                </div>
+                
+                <!-- Logo na seção hero -->
+                <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-GxceRTLWrvWaH3kY2YtyBmFC68VWXM.png" 
+                         alt="BiomedLim Logo" 
+                         class="logo-hero">
                 </div>
             </div>
         </div>
@@ -454,6 +464,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">O que esperar do processo psicoterapêutico</h2>
                 <p class="text-gray-600">Juntos, construiremos um futuro mais feliz e saudável</p>
+                <div class="w-20 h-1 bg-yellow  construiremos um futuro mais feliz e saudável</p>
                 <div class="w-20 h-1 bg-yellow-400 mx-auto mt-4"></div>
             </div>
             
